@@ -134,6 +134,12 @@ def registro(contador):#///
     edad.append(validar(3, 5, 1, "Ingrese su edad: "))
     grado.append(validar(3, 5, 1, "Ingrese el grado [3, 4 y 5 años]: "))
     print("Codigo asignado al estudiante: ", codigo_Est[-1])
+    subir_archivo(codigo_Est[-1], nombre_Est[-1], DNI_Est[-1],edad[-1], grado[-1], "ESTUDIANTES.txt")#***
+    subir_archivo(codigo_Apo[-1], nombre_Apo[-1], codigo_Est[-1],nombre_Est[-1], tipo_tramite[-1], "Padres_Hijos.txt")#***
+    formulario.append(asignar_codigo(3, contador))#***
+    print("Codigo del tramite: ", formulario[-1])#***
+    print("Tramite registrado\n")#***
+    return contador
 def busqueda_tramite(contador):
     encontrado=False
     if(contador==0): print("no hay datos guardados\n")
