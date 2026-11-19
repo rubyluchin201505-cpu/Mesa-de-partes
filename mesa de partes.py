@@ -36,8 +36,13 @@ def validar(dig_inicial , dig_final ,x,cadena):
                 print("Dato invalido, debe tener ",dig_final," dígitos")
             else:
                 return dato
-def asignar_codigo(i,contador):
-    return
+def asignar_codigo(i,contador): #===
+    if i==1:
+        return f"APOD-{contador:03d}"
+    elif i==2:
+        return f"ALUM-{contador:03d}"
+    else :
+        return f"Form-{contador:03d}"
 def subir_archivo(codigo,nom,dni,Tel_ed,Dir_grad,cadena): 
     with open (f"{cadena}",'a',encoding="utf-8") as archivo:
         archivo.write(f"{codigo} | {nom} | {dni} | {Tel_ed} | {Dir_grad}\n")
