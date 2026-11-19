@@ -36,6 +36,13 @@ def validar(dig_inicial , dig_final ,x,cadena):
                 print("Dato invalido, debe tener ",dig_final," dígitos")
             else:
                 return dato
+    elif x==3:
+        while True:
+            dato=input(cadena).strip()
+            if dato=="":
+                print("Dato no válido")
+            else:
+                return dato
 def asignar_codigo(i,contador): #===
     if i==1:
         return f"APOD-{contador:03d}"
