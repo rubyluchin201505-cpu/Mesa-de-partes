@@ -114,7 +114,23 @@ def registro(contador):#///
         subir_archivo(codigo_Apo[-1], nombre_Apo[-1], DNI_Apo[-1],
                       telefono[-1], direccion[-1], "APODERADOS.txt")
 def busqueda_tramite(contador):
-    return
+    encontrado=False
+    if(contador==0): print("no hay datos guardados\n")
+    else:
+        busqueda=validar(1,2,1,"Buscar por 1) DNI O 2) TRAMITE eliga una opcion:")
+        if busqueda==1:
+            dni = validar(0, 8, 2, "Ingrese el DNI del estudiante: ")
+            for i in range (contador):
+                if DNI_Est[i] == dni:
+                    encontrado=True
+                    mostrar_tramite(nombre_Apo[i],DNI_Apo[i],telefono[i],direccion[i],codigo_Apo[i],nombre_Est[i],DNI_Est[i],codigo_Est[i],edad[i],grado[i],tipo_tramite[i],fecha[i],formulario[i])
+        else:
+            cod = input("Ingrese el codigo del tramite (ej. Form-001): ").strip().upper()
+            for i in range (contador):
+                if formulario[i].upper() == cod:
+                    encontrado = True
+                    mostrar_tramite(nombre_Apo[i], DNI_Apo[i], telefono[i], direccion[i], codigo_Apo[i],nombre_Est[i], DNI_Est[i], codigo_Est[i], edad[i], grado[i], tipo_tramite[i], fecha[i],formulario[i])
+        if(encontrado==False): print("No se encontro tramite")
 def ordenar_tramites(contador):
     return
 def mostrar_formularios(contador):
