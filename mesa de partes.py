@@ -119,6 +119,21 @@ def registro(contador):#///
         print("Codigo asignado al apoderado: ", codigo_Apo[-1])
         subir_archivo(codigo_Apo[-1], nombre_Apo[-1], DNI_Apo[-1],
                       telefono[-1], direccion[-1], "APODERADOS.txt")
+        # estudiante 
+    contador = contador + 1
+    print("Registrar Estudiante")
+    nombre_Est.append(validar(0, 0, 3, "Ingrese su nombre: "))
+    while True:#{}
+        dni = validar(0, 8, 2, "Ingrese su DNI: ")
+        if repeticion_caracteres("ESTUDIANTES.txt", dni, 2):
+            print("Ese DNI ya esta registrado\n")
+        else:
+            break
+    DNI_Est.append(dni)
+    codigo_Est.append(asignar_codigo(2, contador))
+    edad.append(validar(3, 5, 1, "Ingrese su edad: "))
+    grado.append(validar(3, 5, 1, "Ingrese el grado [3, 4 y 5 años]: "))
+    print("Codigo asignado al estudiante: ", codigo_Est[-1])
 def busqueda_tramite(contador):
     encontrado=False
     if(contador==0): print("no hay datos guardados\n")
