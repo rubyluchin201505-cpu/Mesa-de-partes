@@ -80,6 +80,12 @@ def repeticion_caracteres(archivo, palabra, columna):#{}
             if len(campos) > columna and campos[columna] == palabra:
                 return True
         return False#{}
+def mostrar_formularios(contador):#===
+    if(contador==0): print("no hay datos guardados\n")
+    else:    
+        for i in range (contador):
+            print(f"Tramite {i+1}")
+            mostrar_tramite(nombre_Apo[i],DNI_Apo[i],telefono[i],direccion[i],codigo_Apo[i],nombre_Est[i],DNI_Est[i],codigo_Est[i],edad[i],grado[i],tipo_tramite[i],fecha[i],formulario[i])
 #FUNCIONES PRINCIPALES
 def registro(contador):#///
     print("REGISTRO DE TRAMITE")
