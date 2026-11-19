@@ -75,8 +75,44 @@ def mostrar_tramite(nomA,dniA,telefo,direcc,codiA,nomE,dniE,codiE,edad,grado,tTr
 def repeticion_caracteres(archivo, palabra, columna):
     pass
 #FUNCIONES PRINCIPALES
-def registro(contador):
-    return
+def registro(contador):#///
+    print("REGISTRO DE TRAMITE")
+    tipo = validar(1, 2, 1, "Ingrese el tramite [1:Inscripcion - 2:Traslado]: ")
+    if tipo == 1:
+        tipo_tramite.append("Inscripcion")
+    else:
+        tipo_tramite.append("Traslado")
+    fecha.append(validar(0, 0, 3, "Ingrese la fecha (dd/mm/aaaa): "))#///
+
+    # apoderado /// ===
+    print("REGISTRAR APODERADO")
+    dni_apo = validar(0, 8, 2, "Ingrese su DNI: ")
+    existe = False
+    for i in range(len(DNI_Apo)):
+        if DNI_Apo[i] == dni_apo:
+            existe = True
+            nom_apo = nombre_Apo[i]
+            tel_apo = telefono[i]
+            dir_apo = direccion[i]
+            cod_apo = codigo_Apo[i]
+            break
+    if existe:
+        print(f"Apoderado ya registrado: {nom_apo} ({cod_apo})")
+        DNI_Apo.append(dni_apo)
+        nombre_Apo.append(nom_apo)
+        telefono.append(tel_apo)
+        direccion.append(dir_apo)
+        codigo_Apo.append(cod_apo)
+    else:
+        n_apo = len(set(codigo_Apo)) + 1          # apoderados distintos + 1
+        DNI_Apo.append(dni_apo)
+        nombre_Apo.append(validar(0, 0, 3, "Ingrese su nombre: "))
+        telefono.append(validar(0, 9, 2, "Ingrese su numero de telefono: "))
+        direccion.append(validar(0, 0, 3, "Ingrese su distrito: "))
+        codigo_Apo.append(asignar_codigo(1, n_apo)) # ===
+        print("Codigo asignado al apoderado: ", codigo_Apo[-1])
+        subir_archivo(codigo_Apo[-1], nombre_Apo[-1], DNI_Apo[-1],
+                      telefono[-1], direccion[-1], "APODERADOS.txt")
 def busqueda_tramite(contador):
     return
 def ordenar_tramites(contador):
