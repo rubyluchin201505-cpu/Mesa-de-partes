@@ -14,7 +14,28 @@ fecha=[]
 formulario=[]
 #FUNCIONES
 def validar(dig_inicial , dig_final ,x,cadena):
-    return
+    if x==1:
+        while True:
+            dato=input(cadena).strip()
+            if dato=="":
+                print("Dato no válido")
+            elif dato.isdigit()==False:
+                print("Dato no valido")
+            elif (int(dato)<dig_inicial or int(dato)>dig_final):
+                print("Dato no valido")
+            else:
+                return int(dato) 
+    elif x==2:
+        while True:
+            dato=input(cadena).strip()
+            if dato=="":
+                print("Dato no válido")
+            elif dato.isdigit()==False:
+                print("Dato no valido")
+            elif(len(dato)!=dig_final):
+                print("Dato invalido, debe tener ",dig_final," dígitos")
+            else:
+                return dato
 def asignar_codigo(i,contador):
     return
 def subir_archivo(codigo,nom,dni,Tel_ed,Dir_grad,cadena): 
