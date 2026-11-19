@@ -165,9 +165,16 @@ def busqueda_tramite(contador):
                     mostrar_tramite(nombre_Apo[i], DNI_Apo[i], telefono[i], direccion[i], codigo_Apo[i],nombre_Est[i], DNI_Est[i], codigo_Est[i], edad[i], grado[i], tipo_tramite[i], fecha[i],formulario[i])
         if(encontrado==False): print("No se encontro tramite")
 def ordenar_tramites(contador):
-    return
-def mostrar_formularios(contador):
-    return
+    if(contador==0): print("no hay datos guardados\n")
+    else:
+        listas = [nombre_Apo, DNI_Apo, codigo_Apo, direccion, telefono, nombre_Est,DNI_Est, codigo_Est, edad, grado, tipo_tramite, fecha, formulario]
+        for i in range(contador - 1):
+            for j in range(contador - 1 - i):
+                if DNI_Est[j] > DNI_Est[j + 1]:
+                    for lista in listas:
+                        lista[j], lista[j + 1] = lista[j + 1], lista[j]
+        print("Los datos se ordenaron\n")
+
 def menu():#***
     print("===MENU=== \n1)Registrar tramite\n2)Buscar el tramite\n3)Ordenar tramite\n4)Mostrar tramite\n5)Salir")
     op=validar(1,5,1,"Escoja una opcion: ")
