@@ -72,8 +72,14 @@ def mostrar_tramite(nomA,dniA,telefo,direcc,codiA,nomE,dniE,codiE,edad,grado,tTr
     for l in lineas:
         print("* " + l + " " * (ancho-len(l)) + " *")
     print("*"*(ancho+4))
-def repeticion_caracteres(archivo, palabra, columna):
-    pass
+def repeticion_caracteres(archivo, palabra, columna):#{}
+    with open(archivo, 'a+', encoding="utf-8") as f:
+        f.seek(0) #Mover la posicion al inicio
+        for linea in f:
+            campos = linea.strip().split(" | ")
+            if len(campos) > columna and campos[columna] == palabra:
+                return True
+        return False#{}
 #FUNCIONES PRINCIPALES
 def registro(contador):#///
     print("REGISTRO DE TRAMITE")
