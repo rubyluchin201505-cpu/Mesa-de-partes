@@ -25,8 +25,6 @@ def mostrar_tramite(nomA,dniA,telefo,direcc,codiA,nomE,dniE,codiE,edad,grado,tTr
 def repeticion_caracteres(archivo, palabra, columna):
     pass
 #FUNCIONES PRINCIPALES
-def menu():
-    return
 def registro(contador):
     return
 def busqueda_tramite(contador):
@@ -35,4 +33,25 @@ def ordenar_tramites(contador):
     return
 def mostrar_formularios(contador):
     return
-    
+def menu():#***
+    print("===MENU=== \n1)Registrar tramite\n2)Buscar el tramite\n3)Ordenar tramite\n4)Mostrar tramite\n5)Salir")
+    op=validar(1,5,1,"Escoja una opcion: ")
+    return op
+
+a1 = True#***
+contador = 0
+while a1 and contador < 100:
+    match menu():
+        case 1:
+            contador = registro(contador)     
+        case 2:
+            busqueda_tramite(contador)
+        case 3:
+            ordenar_tramites(contador)
+        case 4:
+            mostrar_formularios(contador)
+        case 5:
+            a1 = False
+            print("Fin del servicio\n")
+if contador == 100:
+    print("La capacidad es 100 formularios")    
