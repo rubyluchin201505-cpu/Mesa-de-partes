@@ -47,7 +47,24 @@ def subir_archivo(codigo,nom,dni,Tel_ed,Dir_grad,cadena):
     with open (f"{cadena}",'a',encoding="utf-8") as archivo:
         archivo.write(f"{codigo} | {nom} | {dni} | {Tel_ed} | {Dir_grad}\n")
 def mostrar_tramite(nomA,dniA,telefo,direcc,codiA,nomE,dniE,codiE,edad,grado,tTrami,fecha,formulario):
-    return
+    t=f"Tramite de {tTrami} - {formulario}"
+    lineas=[f"Apoderado: {nomA}",f"DNI: {dniA}",f"Codigo: {codiA}",f"Telefono: {telefo}",f"Direccion: {direcc}",
+            f"Estudiante: {nomE}",f"DNI: {dniE}",f"Codigo: {codiE}",f"Edad: {edad}",f"Grado: {grado}"]
+    ancho=len(t)
+    if len(fecha)>ancho:
+        ancho=len(fecha)
+    for l in lineas:
+        if len(l)>ancho:
+            ancho=len(l)
+    espa1=(ancho-len(t))//2
+    espa2=(ancho-len(fecha))//2
+    print("*"*(ancho+4))
+    print("* " + " " * espa1 + t + " " * (ancho-len(t)-espa1) + " *")
+    print("* " + " " * espa2 + fecha + " " * (ancho-len(fecha)-espa2) + " *")
+    print("*"*(ancho+4))
+    for l in lineas:
+        print("* " + l + " " * (ancho-len(l)) + " *")
+    print("*"*(ancho+4))
 def repeticion_caracteres(archivo, palabra, columna):
     pass
 #FUNCIONES PRINCIPALES
