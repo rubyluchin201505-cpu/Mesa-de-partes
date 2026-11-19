@@ -17,8 +17,9 @@ def validar(dig_inicial , dig_final ,x,cadena):
     return
 def asignar_codigo(i,contador):
     return
-def subir_archivo(codigo,nom,dni,Tel_ed,Dir_grad,cadena):
-    pass
+def subir_archivo(codigo,nom,dni,Tel_ed,Dir_grad,cadena): 
+    with open (f"{cadena}",'a',encoding="utf-8") as archivo:
+        archivo.write(f"{codigo} | {nom} | {dni} | {Tel_ed} | {Dir_grad}\n")
 def mostrar_tramite(nomA,dniA,telefo,direcc,codiA,nomE,dniE,codiE,edad,grado,tTrami,fecha,formulario):
     return
 def repeticion_caracteres(archivo, palabra, columna):
@@ -34,3 +35,4 @@ def ordenar_tramites(contador):
     return
 def mostrar_formularios(contador):
     return
+    
